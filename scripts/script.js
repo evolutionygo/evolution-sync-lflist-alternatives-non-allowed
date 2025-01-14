@@ -60,6 +60,12 @@ function readLflistWithContent(filePath) {
       currentList = line; // Iniciar una nueva lista
       listsWithContent[currentList] = []; // Crear un array para su contenido
     } else if (currentList && line.trim() !== '') {
+      // Dividir la línea en partes
+      const parts = line.split(/\s+/); // Separar por espacios
+      if (parts.length >= 2 && parts[1] === '3') {
+        // Omitir la línea si el segundo valor es "3"
+        return;
+      }
       // Añadir contenido a la lista actual
       listsWithContent[currentList].push(line);
     }
@@ -86,6 +92,12 @@ function readConfFilesWithContent(confRepoPath) {
         currentList = line; // Iniciar una nueva lista
         listsWithContent[currentList] = []; // Crear un array para su contenido
       } else if (currentList && line.trim() !== '') {
+        // Dividir la línea en partes
+        const parts = line.split(/\s+/); // Separar por espacios
+        if (parts.length >= 2 && parts[1] === '3') {
+          // Omitir la línea si el segundo valor es "3"
+          return;
+        }
         // Añadir contenido a la lista actual
         listsWithContent[currentList].push(line);
       }
