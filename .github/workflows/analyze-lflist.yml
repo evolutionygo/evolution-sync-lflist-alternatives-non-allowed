@@ -26,7 +26,7 @@ jobs:
 
     - name: Run Node.js script
       env: 
-        TOKEN: ${{ secrets.DEST_REPO_TOKEN }}  # Pasar el token como variable de entorno
+        TOKEN: ${{ secrets.NOT_ALLOWED }}  # Pasar el token como variable de entorno
       run: node scripts/script.js
 
     - name: Upload result as artifact
