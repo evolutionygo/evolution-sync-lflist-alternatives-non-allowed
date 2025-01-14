@@ -62,7 +62,7 @@ function readLflistWithContent(filePath) {
     } else if (currentList && line.trim() !== '') {
       // Dividir la línea en partes
       const parts = line.split(/\s+/); // Separar por espacios
-      if (parts.length >= 2 && parts[1] === '3') {
+      if (parts.length >= 2 && (parts[1] === '3' || parts[1] === '-1')) {
         // Omitir la línea si el segundo valor es "3"
         return;
       }
@@ -94,7 +94,7 @@ function readConfFilesWithContent(confRepoPath) {
       } else if (currentList && line.trim() !== '') {
         // Dividir la línea en partes
         const parts = line.split(/\s+/); // Separar por espacios
-        if (parts.length >= 2 && parts[1] === '3') {
+        if (parts.length >= 2 && (parts[1] === '3' || parts[1] === '-1')) {
           // Omitir la línea si el segundo valor es "3"
           return;
         }
