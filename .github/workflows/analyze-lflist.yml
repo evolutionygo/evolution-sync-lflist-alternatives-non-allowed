@@ -30,7 +30,7 @@ jobs:
       run: node scripts/script.js
 
     - name: Upload result as artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: lflist-analysis
         path: scripts/lflist.conf
